@@ -9,10 +9,6 @@ const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
 
     const [filterBy, setFilterBy] = useState('');
 
-    useEffect(() => {
-        // console.log(filterBy, 'filterBy')
-    }, [filterBy])
-
     const filterCountries = (country) => {
         if(!filterBy || !filterBy.length) return country;
         return country.filter(item => {

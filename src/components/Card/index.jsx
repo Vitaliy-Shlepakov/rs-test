@@ -56,7 +56,7 @@ const Card = ({
             <div className="Card__RightSide">
                 <div className="Card__Cost">
                     <div className="Card__Price">
-                        { price }&nbsp;₽
+                        { price.toLocaleString('ru-RU') }&nbsp;₽
                     </div>
                     <div className="Card__Period">
                         {period}
@@ -66,6 +66,7 @@ const Card = ({
                     <Button
                         type={status}
                         handleBook={handleBook}
+                        cardId={title}
                     />
                 </div>
             </div>

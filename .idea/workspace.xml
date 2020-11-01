@@ -2,67 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc9665ad-59f7-41a0-ab47-437f4a9d4169" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rs-test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/App.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/icons/clear.icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Box/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Box/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/icons/book.icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/icons/booked.icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/icons/location.icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/icons/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Checkbox/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CountryWIdget/icons/clear.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CountryWIdget/icons/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CountryWIdget/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CountryWIdget/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Empty/icons/empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Empty/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Empty/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PriceWidget/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PriceWidget/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RangeSlider/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RangeSlider/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Rating/icons/star-active.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Rating/icons/star.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Rating/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Rating/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RatingWidget/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RatingWidget/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReviewsWidget/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReviewsWidget/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TypeWidget/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TypeWidget/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/dictionary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/mock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/variables/index.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CountryWIdget/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CountryWIdget/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CountryWIdget/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CountryWIdget/index.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -73,49 +22,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8095645">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App/App.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
-                  <folding>
-                    <element signature="e#0#20#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Pagination/index.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/Pagination/index.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Card/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -137,15 +57,25 @@
       <find>ReviewsWidget__Input</find>
       <find>PriceWidget__Body</find>
       <find>!=</find>
-      <find>cardsData</find>
       <find>type</find>
       <find>img</find>
       <find>pageCount</find>
+      <find>getAvailableCountries</find>
+      <find>getAvailableProps</find>
+      <find>CountryWidget__List</find>
+      <find>100</find>
+      <find>App__Btn</find>
+      <find>RANGE</find>
+      <find>console.log</find>
+      <find>cardsData</find>
+      <find>handleBook</find>
     </findStrings>
     <replaceStrings>
       <replace>.TypeWidget</replace>
       <replace>RatingWidget</replace>
       <replace>.RatingWidget</replace>
+      <replace>getAvailableProps</replace>
+      <replace>INIT_RANGE</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -181,21 +111,22 @@
         <option value="$PROJECT_DIR$/src/components/RangeSlider/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/RangeSlider/index.sass" />
         <option value="$PROJECT_DIR$/src/components/PriceWidget/index.sass" />
-        <option value="$PROJECT_DIR$/src/components/CountryWIdget/index.sass" />
         <option value="$PROJECT_DIR$/src/components/Checkbox/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/TypeWidget/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/RatingWidget/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/CountryWIdget/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Card/index.jsx" />
         <option value="$PROJECT_DIR$/src/index.sass" />
         <option value="$PROJECT_DIR$/src/components/PriceWidget/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/ReviewsWidget/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Button/index.jsx" />
-        <option value="$PROJECT_DIR$/src/App/App.sass" />
         <option value="$PROJECT_DIR$/src/components/Pagination/index.sass" />
         <option value="$PROJECT_DIR$/src/components/Pagination/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/CountryWIdget/index.sass" />
+        <option value="$PROJECT_DIR$/src/App/App.sass" />
+        <option value="$PROJECT_DIR$/src/components/Button/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/CountryWIdget/index.jsx" />
         <option value="$PROJECT_DIR$/src/data/mock.js" />
+        <option value="$PROJECT_DIR$/src/data/mock.json" />
         <option value="$PROJECT_DIR$/src/App/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Card/index.jsx" />
       </list>
     </option>
   </component>
@@ -234,7 +165,8 @@
               <item name="rs-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="rs-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Card" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,11 +184,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\public" />
       <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\src\App\icons" />
       <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\src\components\CountryWIdget\icons" />
       <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\src\components\Checkbox\icons" />
       <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\src\components\Empty" />
-      <recent name="C:\Users\shlep\Desktop\тестовое RS\rs-test\src\App" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -282,12 +214,12 @@
       <option name="presentableId" value="Default" />
       <updated>1604132333273</updated>
       <workItem from="1604132335460" duration="22534000" />
-      <workItem from="1604219950448" duration="25137000" />
+      <workItem from="1604219950448" duration="30517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47671000" />
+    <option name="totallyTimeSpent" value="53051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,7 +234,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17583893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -315,7 +247,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.16005665" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.20963173" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -454,13 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ReviewsWidget/index.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -492,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CountryWIdget/index.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/dictionary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -526,30 +444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CountryWIdget/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TypeWidget/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="31" column="75" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Card/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -583,16 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Button/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-paginate/dist/react-paginate.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -600,23 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Pagination/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,19 +501,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/mock.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Pagination/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CountryWIdget/index.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/App.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="1139" column="8" selection-start-line="1139" selection-start-column="8" selection-end-line="1139" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CountryWIdget/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3247">
+          <caret line="191" column="22" selection-start-line="191" selection-start-column="22" selection-end-line="191" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/mock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="179" column="22" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
+        <state relative-caret-position="578">
+          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Button/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

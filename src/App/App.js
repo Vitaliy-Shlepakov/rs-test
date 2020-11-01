@@ -1,7 +1,6 @@
 import './App.sass';
 import React, {useState, useEffect} from "react";
 import Card from "../components/Card";
-import {cardsData} from '../data/mock';
 import Empty from "../components/Empty";
 import CountryWidget from "../components/CountryWIdget";
 import TypeWidget from "../components/TypeWidget";
@@ -10,12 +9,15 @@ import ReviewsWidget from "../components/ReviewsWidget";
 import PriceWidget from "../components/PriceWidget";
 import ClearIcon from './icons/clear.icon.svg';
 import Pagination from "../components/Pagination";
+import {cardsData} from '../data/mock';
+
 
 function getUniqueListBy(arr, key) {
     return [...new Map(arr.map(item => [item[key], item])).values()]
 };
 
 const PAGE_COUNT = 10;
+const INIT_RANGE = [0, 100500];
 
 function App() {
 
@@ -25,7 +27,7 @@ function App() {
     const [selectedTypes, setSelectedTypes] = useState([]);
     const [selectedRating, setSelectedRating] = useState([]);
     const [reviewsCount, setReviewsCount] = useState(null);
-    const [priceRange, setPriceRange] = useState([0,100500]);
+    const [priceRange, setPriceRange] = useState(INIT_RANGE);
 
     const [filteredCard, setFilteredCard] = useState([]);
     const [allCards, setAllCards] = useState([]);
@@ -33,11 +35,10 @@ function App() {
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-    }, [selectedTypes, selectedRating]);
-
-    useEffect(() => {
-        setAvailableCountries(getAvailableCountries());
-        setSelectedCountries(getAvailableCountries().map(item => item.value));
+        setAvailableCountries(getAvailableProps('location'));
+        setSelectedCountries(getAvailableProps('location').map(item => item.value));
+        setSelectedTypes(getAvailableProps('type'));
+        setSelectedRating(getAvailableProps('rating'));
         setAllCards(cardsData);
         setFilteredCard(cardsData);
     }, []);
@@ -58,13 +59,8 @@ function App() {
 
     const handleFilter = e => {
         e.preventDefault();
-
+        // callback hell
         const res = filterByPrice(filterByReviews(filterByRating(filterByType(filterByCountry(allCards)))));
-        // const res = filterByCountry(allCards)
-        //     .then(res => filterByType(res))
-        //     .then(res => filterByRating(res))
-        //     .then(res => filterByReviews(res))
-        //     .then(res => filterByPrice(res))
         setFilteredCard(res)
     };
 
@@ -102,15 +98,18 @@ function App() {
         });
     };
 
-    const handleBook = (id, status) => {};
+    const handleBook = (title, status) => {
+        status === 2
+            ? alert(`Если бы был бэк, вы могли бы забронировать ${title}`)
+            : alert(`Уже забронирован ${title}`)
+    };
 
-    const handleResetFilter = e => {
-        e.preventDefault();
-        setSelectedCountries(getAvailableCountries().map(item => item.value));
-        setSelectedTypes([]);
-        setSelectedRating([]);
+    const handleResetFilter = () => {
+        setSelectedCountries(getAvailableProps('location').map(item => item.value));
+        setSelectedTypes(getAvailableProps('type'));
+        setSelectedRating(getAvailableProps('rating'));
         setReviewsCount([]);
-        setPriceRange([0,100500]);
+        setPriceRange(INIT_RANGE);
         setFilteredCard(cardsData);
     };
 
@@ -159,17 +158,19 @@ function App() {
         }
     };
 
-    const getAvailableCountries = () => {
+    const getAvailableProps = (field) => {
         const res = cardsData.map(item => {
-            return item.location
+            return item[field]
         });
-        setSelectedCountries(res)
-        return getUniqueListBy(res, 'value')
+        if(field === 'location'){
+            return getUniqueListBy(res, 'value')
+        };
+        return res
     };
 
     const handlePageChange = ({selected}) => {
         setCurrentPage(selected + 1)
-    }
+    };
 
 
     return (
@@ -208,21 +209,21 @@ function App() {
                         />
                     </div>
                     <div className="App__Actions">
-                        <a
-                            href="#"
+                        <button
+                            type="button"
                             className="App__Btn App__Btn--Apply"
                             onClick={handleFilter}
                         >
                             Применить фильтр
-                        </a>
-                        <a
-                            href="#"
+                        </button>
+                        <button
+                            type="button"
                             className="App__Btn App__Btn--Reset"
                             onClick={handleResetFilter}
                         >
                             <img src={ClearIcon} alt="очистить фильтр"/>
                             <span>Очистить фильтр</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div className="App__Content">

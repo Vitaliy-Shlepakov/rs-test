@@ -9,13 +9,19 @@ const Button = ({
         cardId,
         handleBook
     }) => {
+
+    const handleBookPlace = e => {
+        e.preventDefault();
+        handleBook(cardId, type)
+    };
+
     return (
         <a className={classNames({
             'Button': true,
             [`Button--${type}`]: type
         })}
         href="/"
-        onClick={handleBook(cardId, type)}
+        onClick={e => handleBookPlace(e, cardId, type)}
         >
             <span className="Button__Icon">
                 { type === 1 && <img src={BookIcon} alt="забронировать"/> }
