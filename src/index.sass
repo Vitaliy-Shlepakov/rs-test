@@ -1,0 +1,83 @@
+@import "./variables"
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+html
+  display: flex
+  flex-direction: column
+  //display: table
+  table-layout: fixed
+  width: 100%
+  min-height: 100%
+  font-family: sans-serif
+  line-height: 1.15
+  -ms-overflow-style: scrollbar
+  -webkit-tap-highlight-color: rgba(#000, 0)
+
+
+body
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  margin: 0
+  width: 100%
+  font-family: $font-base
+  font-size: 16px
+  font-weight: $font-weight-base
+  line-height: 1.5
+  color: $color-text
+  text-align: left
+
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizelegibility
+  backface-visibility: hidden
+
+
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul
+  margin: 0
+  padding: 0
+  font-weight: normal
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section
+  display: block
+
+ol, ul
+  list-style: none
+
+img
+  max-width: 100%
+  height: auto
+  display: block
+
+a
+  text-decoration: none
+
+input
+  height: 50px
+  line-height: 50px
+  border-radius: 10px
+  border: 1px solid #EAEAEA
+  font-family: $font-base
+  font-size: 16px
+  color: $color-text
+  padding: 0 20px
+  width: 100%
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  &::placeholder
+    font-size: 16px
+    color: $color-grey
+
+input[type=number]
+  -moz-appearance: textfield
+

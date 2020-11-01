@@ -1,0 +1,44 @@
+@import '../../variables'
+
+.Pagination
+  display: inline-flex
+
+.Pagination__Link
+  display: inline-block
+  width: 40px
+  height: 40px
+  text-align: center
+  line-height: 40px
+  font-family: $font-base
+  font-size: 18px
+  border-radius: 2px
+  cursor: pointer
+
+
+
+.Pagination__Item
+    & + &
+      margin-left: 5px
+
+    &.active
+      .Pagination__Link
+        background-color: rgba(#6A53F5, .1)
+        color: $color-violet
+
+.previous,
+.next
+  font-family: $font-base
+  font-size: 16px
+  font-weight: bold
+  color: $color-text
+  line-height: 40px
+  cursor: pointer
+
+  &.disabled
+    color: $color-grey
+
+.previous
+  margin-right: 50px
+
+.next
+  margin-left: 50px

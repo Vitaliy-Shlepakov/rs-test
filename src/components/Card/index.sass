@@ -1,0 +1,74 @@
+@import '../../variables'
+
+.Card
+  display: flex
+  padding: 25px 25px 30px
+  border-radius: 15px
+  border: 1px solid #EAEAEA
+
+.Card__Title
+  font-family: $font-base
+  font-weight: bold
+  font-size: 20px
+  line-height: 26px
+  color: $color-text
+  margin-bottom: 5px
+
+.Card__Field
+  display: flex
+  align-items: center
+  margin-bottom: 15px
+
+.Card__Option
+  font-size: 14px
+  line-height: 18px
+  color: $color-grey
+  position: relative
+
+  & + &
+    padding-left: 18px
+
+    &::before
+      content: ''
+      display: inline-block
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      background-color: #949494
+      position: absolute
+      left: 7px
+      top: 50%
+      transform: translateY(-50%)
+
+.Card__Col
+  display: flex
+  margin-left: 15px
+
+.Card__LeftSide
+  flex-grow: 1
+  padding-right: 30px
+
+.Card__RightSide
+  flex-shrink: 0
+  justify-content: flex-end
+
+.Card__Location-Icon
+  margin-right: 8px
+
+.Card__Cost
+  margin-bottom: 25px
+
+.Card__Price
+  font-size: 25px
+  line-height: 32px
+  font-weight: bold
+  text-align: right
+  color: $color-text
+
+.Card__Period
+  font-size: 12px
+  line-height: 16px
+  color: $color-grey
+  text-align: right
+
+

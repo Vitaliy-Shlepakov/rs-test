@@ -1,0 +1,23 @@
+@import '../../variables'
+
+.RatingWidget
+
+.RatingWidget__Body
+  display: flex
+  flex-direction: column
+  padding: 25px 20px
+  background: #FAFAFA
+  border: 1px solid #EAEAEA
+  border-radius: 10px
+
+.RatingWidget__Title
+  font-size: 16px
+  line-height: 21px
+  font-weight: bold
+  font-family: $font-base
+  color: $color-text
+  margin-bottom: 13px
+
+.RatingWidget__Checkbox
+  & + &
+    margin-top: 8px
