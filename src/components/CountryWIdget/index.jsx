@@ -4,22 +4,55 @@ import SearchIcon from './icons/search.svg';
 import ClearIcon from './icons/clear.svg';
 import {isChecked} from '../../utils';
 import CheckBox from "../Checkbox";
+import {connect} from 'react-redux';
+import {
+    checkCountry,
+    setAvaliableCountries,
+    setSearchCountry,
+    resetSearchCountry
+} from '../../redux/actions';
 
-const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
+const mapStateToProps = ({countries}) => ({
+    availableCountries: countries.availableCountries,
+    selectedCountries: countries.selectedCountries,
+    searchBy: countries.searchBy,
+    filteredCountries: countries.filteredCountries,
+});
 
-    const [filterBy, setFilterBy] = useState('');
+const mapDispatchToProps = {
+    checkCountry,
+    setAvaliableCountries,
+    setSearchCountry,
+    resetSearchCountry
+};
 
-    const filterCountries = (country) => {
-        if(!filterBy || !filterBy.length) return country;
-        return country.filter(item => {
-            return item.title.toLowerCase().includes(filterBy.toLowerCase())
-        })
-    };
+const CountryWidget = ({
+                           selectedCountries,
+                           setAvaliableCountries,
+                           checkCountry,
+                           setSearchCountry,
+                           searchBy,
+                           filteredCountries,
+                           resetSearchCountry
+                       }) => {
+
+
+
+    useEffect(() => {
+        setAvaliableCountries();
+    },[]);
+
+    useEffect(() => {
+        console.log('searchBy');
+    },[searchBy]);
+
+
 
     const handleResetFilter = (e) => {
         e.preventDefault();
-        setFilterBy('');
+        resetSearchCountry();
     };
+
 
     return (
         <div className="CountryWidget">
@@ -30,7 +63,8 @@ const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
             <div className="CountryWidget__Field">
                 <img src={SearchIcon} className="CountryWidget__Icon" alt="поиск"/>
                 {
-                    filterBy && filterBy.length && (<a
+                    searchBy && searchBy.length && (
+                    <a
                         href="/"
                         className="CountryWidget__Btn-Clear"
                         onClick={handleResetFilter}
@@ -42,15 +76,15 @@ const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
                     type="text"
                     placeholder="Поиск стран"
                     className="CountryWidget__Input"
-                    value={filterBy}
-                    onInput={e => setFilterBy(e.target.value)}
+                    value={searchBy}
+                    onInput={e => setSearchCountry(e.target.value)}
                 />
             </div>
 
             <div className="CountryWidget__List">
                 {
-                    filterCountries(availableCountries).length
-                        ? filterCountries(availableCountries).map((item, index) => {
+                    filteredCountries.length
+                        ? filteredCountries.map((item, index) => {
                             return (
                                 <div
                                     className="CountryWidget__Item"
@@ -58,8 +92,8 @@ const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
                                 >
                                     <CheckBox
                                         option={item}
-                                        checked={isChecked(item.value, selected)}
-                                        onChange={handleChangeCountry}
+                                        checked={isChecked(item.value, normalizeArr(selectedCountries))}
+                                        onChange={() => checkCountry(item)}
                                     />
                                 </div>
                             )
@@ -76,4 +110,11 @@ const CountryWidget = ({availableCountries, selected, handleChangeCountry}) => {
     );
 };
 
-export default CountryWidget;
+const normalizeArr = arr => {
+    return arr.map(item => item.value)
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CountryWidget);

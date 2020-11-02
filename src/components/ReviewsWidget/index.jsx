@@ -1,7 +1,17 @@
 import React from 'react';
 import './index.sass';
+import { connect } from "react-redux";
+import {setReviews} from '../../redux/actions';
 
-const ReviewsWidget = ({reviewsCount, handleSetReviewsCount}) => {
+const mapStateToProps = ({reviews}) => ({
+    reviews
+});
+
+const mapDispatchToProps = {
+    setReviews
+}
+
+const ReviewsWidget = ({reviews, setReviews}) => {
     return (
         <div className="ReviewsWidget">
             <div className="ReviewsWidget__Title">
@@ -11,12 +21,15 @@ const ReviewsWidget = ({reviewsCount, handleSetReviewsCount}) => {
                 className="ReviewsWidget__Input"
                 type="number"
                 placeholder="Например, от 10"
-                value={reviewsCount || 0}
-                onChange={e => handleSetReviewsCount(+e.target.value)}
+                value={reviews}
+                onChange={e => setReviews(+e.target.value)}
                 min="1"
             />
         </div>
     );
 };
 
-export default ReviewsWidget;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ReviewsWidget);

@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './index.sass';
 import CheckBox from "../Checkbox";
 import {isChecked} from '../../utils';
+import { connect } from 'react-redux';
+import {
+    setTypes,
+    checkType,
+} from '../../redux/actions'
+
+const mapStateToProps = ({selectedTypes}) => ({
+    selectedTypes
+});
+
+const mapDispatchToProps = {
+    setTypes,
+    checkType
+};
 
 const avaliableTypes = [
     {
@@ -14,8 +28,11 @@ const avaliableTypes = [
     },
 ]
 
-const TypeWidget = ({selected, handleChangeType}) => {
+const TypeWidget = ({selectedTypes, checkType, setTypes}) => {
 
+    useEffect(() => {
+        setTypes();
+    }, []);
 
     return (
         <div className="TypeWidget">
@@ -29,8 +46,8 @@ const TypeWidget = ({selected, handleChangeType}) => {
                             <div className="TypeWidget__Checkbox" key={index.toString()}>
                                 <CheckBox
                                     option={item}
-                                    checked={isChecked(item.value, selected)}
-                                    onChange={handleChangeType}
+                                    checked={isChecked(item.value, selectedTypes)}
+                                    onChange={_=> checkType(item)}
                                 />
                             </div>
                         )
@@ -41,4 +58,7 @@ const TypeWidget = ({selected, handleChangeType}) => {
     );
 };
 
-export default TypeWidget;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TypeWidget);

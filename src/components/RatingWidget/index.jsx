@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './index.sass';
 import CheckBox from "../Checkbox";
 import {isChecked} from '../../utils';
+import { connect } from 'react-redux';
+import {setRating, checkRating} from '../../redux/actions'
+
+const mapStateToProps = ({selectedRating}) => ({
+    selectedRating
+});
+
+const mapDispatchToProps = {
+    setRating,
+    checkRating
+};
 
 const ratingStructure = [
     {
@@ -27,7 +38,12 @@ const ratingStructure = [
 ];
 
 
-const RatingWidget = ({selected, handleChangeRating}) => {
+const RatingWidget = ({selectedRating, setRating, checkRating}) => {
+
+    useEffect(() => {
+        setRating()
+    }, []);
+
     return (
         <div className="RatingWidget">
             <h4 className="RatingWidget__Title">
@@ -40,8 +56,8 @@ const RatingWidget = ({selected, handleChangeRating}) => {
                             <div className="RatingWidget__Checkbox" key={index.toString()}>
                                 <CheckBox
                                     option={item}
-                                    checked={isChecked(item.value, selected)}
-                                    onChange={handleChangeRating}
+                                    checked={isChecked(item.value, selectedRating)}
+                                    onChange={_ => checkRating(item)}
                                 />
                             </div>
                         )
@@ -52,4 +68,7 @@ const RatingWidget = ({selected, handleChangeRating}) => {
     );
 };
 
-export default RatingWidget;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(RatingWidget);
