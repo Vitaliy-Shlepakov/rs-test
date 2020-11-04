@@ -1,5 +1,7 @@
 import React from 'react';
 import LocationIcon from './icons/location.icon.svg';
+import BookIcon from './icons/book.icon.svg';
+import BookedIcon from './icons/booked.icon.svg';
 import './index.sass';
 import CardBtn from "../Button";
 import Rating from "../Rating";
@@ -17,7 +19,6 @@ const Card = ({
           status,
       },
       handleBook
-
       }) => {
     return (
         <div className="Card">
@@ -27,7 +28,7 @@ const Card = ({
                     {title}
                 </div>
                 <div className="Card__Field">
-                    <div className="Card__Rating">
+                    <div className="Card__Col">
                         <Rating
                             rating={rating}
                         />
@@ -64,10 +65,23 @@ const Card = ({
                 </div>
                 <div className="Card__Button">
                     <CardBtn
-                        type={status}
-                        handleBook={handleBook}
-                        cardId={title}
-                    />
+                        them={status === 1 ? 'green': 'violetLight'}
+                        onClick={() => handleBook(title)}
+                    >
+                        { status === 1 && (
+                            <>
+                                <img src={BookIcon} style={{marginRight: '7px'}} alt="Забронировано"/>
+                                <span>Забронировано</span>
+                            </>
+                            )
+                        }
+                        { status === 2 && (
+                            <>
+                                <img src={BookedIcon} style={{marginRight: '7px'}} alt="Забронировать"/>
+                                <span>Забронировать</span>
+                            </>
+                        )}
+                    </CardBtn>
                 </div>
             </div>
 
@@ -82,12 +96,10 @@ function formatDescr(count) {
     switch(count){
         case 1:
             return 'отзыв';
-            break;
         case 2:
         case 3:
-        case 3:
+        case 4:
             return 'отзыва';
-            break;
         default:
             return 'отзывов'
     }

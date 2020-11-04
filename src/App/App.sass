@@ -1,4 +1,4 @@
-@import '../variables'
+@import '../common'
 
 .App
   padding: 56px 0
@@ -15,10 +15,21 @@
   margin: 0 auto
   min-height: 100vh
 
+  +max-w($mobile_lg)
+    flex-direction: column
+
+
 .App__Sidebar
   width: 365px
   flex-shrink: 0
   padding-right: 40px
+
+  +max-w($tablet)
+    width: 240px
+
+  +max-w($mobile_lg)
+    width: 100%
+    padding: 0
 
 .App__Content
   padding-top: 35px
@@ -68,5 +79,10 @@
   display: flex
   justify-content: center
   padding-top: 40px
+
+.App__Action
+
+  & + &
+    margin-top: 20px
 
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './index.sass';
 import SearchIcon from './icons/search.svg';
 import ClearIcon from './icons/clear.svg';

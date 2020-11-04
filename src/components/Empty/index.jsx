@@ -8,7 +8,7 @@ const Empty = ({handleResetFilter}) => {
             <div className="Empty__Inner">
                 <img
                     src={empty}
-                    alt=""
+                    alt="просто картинка"
                     className="Empty__Logo"
                 />
                 <p className="Empty__Title">
@@ -18,7 +18,7 @@ const Empty = ({handleResetFilter}) => {
                     Попробуйте изменить параметры фильтрации или вернуться в общий каталог
                 </p>
                 <a
-                    href="#"
+                    href="/"
                     className="Empty__Btn-Reset"
                     onClick={handleResetFilter}
                 >Очистить фильтр</a>

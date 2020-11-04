@@ -12,6 +12,7 @@ import Pagination from "../components/Pagination";
 import { connect } from "react-redux";
 
 import {resetFilters, setFilteredCards, setCurrentPage, setState} from '../redux/actions'
+import Button from "../components/Button";
 
 const mapDispatchToProps = {
     resetFilters,
@@ -41,24 +42,10 @@ function App({
         setState()
     }, []);
 
-
-    const handleFilter = e => {
-        e.preventDefault();
-        setFilteredCards()
-    };
-
     //mock method
-    const handleBook = (title, status) => {
-        status === 2
-            ? alert(`Если бы был бэк, вы могли бы забронировать ${title}`)
-            : alert(`Уже забронирован ${title}`)
+    const handleBook = (title) => {
+            alert(`Нужен бекендщик, чтобы забронировать ${title}`)
     };
-
-    const handleResetFilter = e => {
-        e.preventDefault();
-        resetFilters()
-    };
-
 
     return (
         <div className="App">
@@ -80,21 +67,25 @@ function App({
                         <PriceWidget/>
                     </div>
                     <div className="App__Actions">
-                        <a
-                            href="/"
-                            className="App__Btn App__Btn--Apply"
-                            onClick={handleFilter}
-                        >
-                            Применить фильтр
-                        </a>
-                        <a
-                            href="/"
-                            className="App__Btn App__Btn--Reset"
-                            onClick={handleResetFilter}
-                        >
-                            <img src={ClearIcon} alt="очистить фильтр"/>
-                            <span>Очистить фильтр</span>
-                        </a>
+                        <div className="App__Action">
+                            <Button
+                                them="violet"
+                                size="large"
+                                onClick={setFilteredCards}
+                            >
+                                Применить фильтр
+                            </Button>
+                        </div>
+                       <div className="App__Action">
+                           <Button
+                               them="transparent"
+                               size="large"
+                               onClick={resetFilters}
+                           >
+                               <img src={ClearIcon} style={{marginRight: '7px'}} alt="очистить фильтр"/>
+                               <span>Очистить фильтр</span>
+                           </Button>
+                       </div>
                     </div>
                 </div>
                 <div className="App__Content">
@@ -116,7 +107,7 @@ function App({
                     }
                     <div className="App__Pagination">
                         {
-                            filteredCards && filteredCards.length
+                            filteredCards && filteredCards.length > PAGE_COUNT
                                 ? <Pagination
                                     pageCount={filteredCards.length / PAGE_COUNT}
                                     onPageChange={setCurrentPage}

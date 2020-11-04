@@ -1,27 +1,52 @@
-@import "../../variables"
+@import "../../common"
 
 .Button
-  height: 40px
-  min-width: 180px
   display: flex
   align-items: center
   justify-content: center
-  border-radius: 12px
   transition: .3s all
+  width: 100%
 
-  &--2
+  &--small
+    height: 40px
+    min-width: 180px
+    border-radius: 12px
+
+  &--large
+    height: 56px
+    min-width: 100%
+    border-radius: 15px
+
+  &--violetLight
     background-color: rgba($color-violet, .1)
     color: $color-violet
 
     &:hover
       background-color: rgba($color-violet, .3)
 
-  &--1
+  &--green
     background-color: rgba($color-green, .1)
     color: $color-green
 
     &:hover
       background-color: rgba($color-green, .3)
+
+  &--violet
+    background-color: $color-violet
+    color: #fff
+    border: 1px solid $color-violet
+    
+    &:hover
+      background-color: darken($color-violet, 10%)
+
+  &--transparent
+    color: #3A3A3A
+    background-color: #fff
+    border: 1px solid #EAEAEA
+
+    &:hover
+      border: 1px solid #3A3A3A
+
 
 .Button__Icon
   padding-right: 10px

@@ -1,40 +1,30 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import './index.sass';
 import classNames from 'classnames';
-import BookIcon from './icons/book.icon.svg';
-import BookedIcon from './icons/booked.icon.svg';
 
 const Button = ({
-        type = 1,
-        cardId,
-        handleBook
+        children,
+        onClick,
+        them,
+        size= 'small'
     }) => {
 
 
-    const handleBookPlace = useCallback(
-        e => {
-            e.preventDefault();
-            handleBook(cardId, type)
-        },
-        [cardId, type]
-    );
+    const handleClick = e => {
+        e.preventDefault();
+        onClick()
+    };
 
     return (
         <a className={classNames({
             'Button': true,
-            [`Button--${type}`]: type
+            [`Button--${them}`]: them,
+            [`Button--${size}`]: size
         })}
         href="/"
-        onClick={e => handleBookPlace(e, cardId, type)}
+        onClick={handleClick}
         >
-            <span className="Button__Icon">
-                { type === 1 && <img src={BookIcon} alt="забронировать"/> }
-                { type === 2 && <img src={BookedIcon} alt="забронировать"/> }
-            </span>
-            <span className="Button__Text">
-                { type === 1 && 'Забронировано'}
-                { type === 2 && 'Забронировать'}
-            </span>
+            {children}
         </a>
     );
 };

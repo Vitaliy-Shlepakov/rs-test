@@ -1,10 +1,13 @@
-@import '../../variables'
+@import '../../common'
 
 .Card
   display: flex
   padding: 25px 25px 30px
   border-radius: 15px
   border: 1px solid #EAEAEA
+
+  +max-w($mobile_sm)
+    flex-direction: column
 
 .Card__Title
   font-family: $font-base
@@ -16,6 +19,7 @@
 
 .Card__Field
   display: flex
+  flex-wrap: wrap
   align-items: center
   margin-bottom: 15px
 
@@ -42,21 +46,34 @@
 
 .Card__Col
   display: flex
-  margin-left: 15px
+  margin-right: 15px
 
 .Card__LeftSide
   flex-grow: 1
   padding-right: 30px
 
+  +max-w($mobile_sm)
+    padding: 0
+
 .Card__RightSide
   flex-shrink: 0
-  justify-content: flex-end
+  align-items: flex-end
+  justify-content: space-between
+  display: flex
+  flex-direction: column
+
+  +max-w($mobile_sm)
+    align-items: flex-start
+    padding-top: 30px
 
 .Card__Location-Icon
   margin-right: 8px
 
 .Card__Cost
   margin-bottom: 25px
+
+  +max-w($mobile_sm)
+    margin: 0 0 20px
 
 .Card__Price
   font-size: 25px

@@ -121,13 +121,16 @@ const reducer = (state = initialState, {type, payload}) => {
         case SET_FILTERED_CARDS:
             return {
                 ...state,
-                filteredCards: filterByPrice(filterByReviews(
-                    filterByRating(filterByType(filterByCountry(state.cards, state.countries.selectedCountries),
-                        state.selectedTypes),
-                        state.selectedRating),
-                    state.reviews),
-                    state.priceRange
-                )
+                filteredCards:
+                    filterByPrice(
+                        filterByReviews(
+                            filterByRating(
+                                filterByType(
+                                    filterByCountry(state.cards, state.countries.selectedCountries),
+                                state.selectedTypes),
+                            state.selectedRating),
+                        state.reviews),
+                    state.priceRange)
             };
 
         default:
