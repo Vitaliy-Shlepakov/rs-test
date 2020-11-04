@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './index.sass';
 import classNames from 'classnames';
 import BookIcon from './icons/book.icon.svg';
@@ -10,10 +10,14 @@ const Button = ({
         handleBook
     }) => {
 
-    const handleBookPlace = e => {
-        e.preventDefault();
-        handleBook(cardId, type)
-    };
+
+    const handleBookPlace = useCallback(
+        e => {
+            e.preventDefault();
+            handleBook(cardId, type)
+        },
+        [cardId, type]
+    )
 
     return (
         <a className={classNames({

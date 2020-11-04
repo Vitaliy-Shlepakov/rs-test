@@ -9,6 +9,9 @@ import {
     CHECK_RATING,
     SET_REVIEWS,
     RESET_FILTER,
+    SET_PRICE_RANGE,
+    SET_FILTERED_CARDS,
+    SET_CURRENT_PAGE,
 } from './tasks';
 
 
@@ -63,6 +66,23 @@ const resetFilters = () => ({
     type: RESET_FILTER
 });
 
+// --- PRICE ---
+const setPriceRange = (index, val) => ({
+    type: SET_PRICE_RANGE,
+    payload: {index, val}
+});
+
+// --- CARDS ---
+const setFilteredCards = () => ({
+    type: SET_FILTERED_CARDS,
+});
+
+// --- PAGINATION ---
+const setCurrentPage = (value) => ({
+    type: SET_CURRENT_PAGE,
+    payload: value
+});
+
 
 
 export {
@@ -75,5 +95,8 @@ export {
     setRating,
     checkRating,
     setReviews,
-    resetFilters
+    resetFilters,
+    setPriceRange,
+    setFilteredCards,
+    setCurrentPage,
 };

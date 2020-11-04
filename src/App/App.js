@@ -1,5 +1,5 @@
 import './App.sass';
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import Card from "../components/Card";
 import Empty from "../components/Empty";
 import CountryWidget from "../components/CountryWIdget";
@@ -9,110 +9,48 @@ import ReviewsWidget from "../components/ReviewsWidget";
 import PriceWidget from "../components/PriceWidget";
 import ClearIcon from './icons/clear.icon.svg';
 import Pagination from "../components/Pagination";
-import {cardsData} from '../data/mock';
 import { connect } from "react-redux";
 
-import {resetFilters} from '../redux/actions'
-
-function getUniqueListBy(arr, key) {
-    return [...new Map(arr.map(item => [item[key], item])).values()]
-};
+import {resetFilters, setFilteredCards, setCurrentPage} from '../redux/actions'
 
 
 const mapDispatchToProps = {
-    resetFilters
+    resetFilters,
+    setFilteredCards,
+    setCurrentPage,
 };
 
-const mapStateToProps = state => {
-    return {
-        availableCountries: state.availableCountries
-    }
-};
+const mapStateToProps = ({cards, filteredCards, currentPage}) => ({
+    cards,
+    filteredCards,
+    currentPage
+});
 
 const PAGE_COUNT = 10;
-const INIT_RANGE = [0, 100500];
+
 
 function App({
-     resetFilters
-
+     resetFilters,
+     setFilteredCards,
+     filteredCards,
+     setCurrentPage,
+     currentPage
     }) {
 
-    // const [availableCountries, setAvailableCountries] = useState([]);
-    const [selectedCountries, setSelectedCountries] = useState([]);
 
-    const [selectedTypes, setSelectedTypes] = useState([]);
-    const [selectedRating, setSelectedRating] = useState([]);
-    const [reviewsCount, setReviewsCount] = useState(null);
-    const [priceRange, setPriceRange] = useState(INIT_RANGE);
 
-    const [filteredCard, setFilteredCard] = useState([]);
-    const [allCards, setAllCards] = useState([]);
-
-    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        // setAvailableCountries(getAvailableProps('location'));
-        // setSelectedCountries(getAvailableProps('location').map(item => item.value));
-        // setSelectedTypes(getAvailableProps('type'));
-        // setSelectedRating(getAvailableProps('rating'));
-        // setAllCards(cardsData);
-        // setFilteredCard(cardsData);
+
     }, []);
 
-    const handleSetRangePart = (index, val) => {
-        if(Array.isArray(val)){
-            setPriceRange(val);
-            return
-        }
-        setPriceRange(state => {
-            if(index === 0) {
-                return [val, state[index + 1]]
-            }else if(index === 1) {
-                return [state[0], val]
-            }
-        })
-    };
 
     const handleFilter = e => {
         e.preventDefault();
-        // callback hell
-        const res = filterByPrice(filterByReviews(filterByRating(filterByType(filterByCountry(allCards)))));
-        setFilteredCard(res)
+        setFilteredCards()
     };
 
 
-    const filterByCountry = arr => {
-        return arr.filter(item => {
-            return selectedCountries.includes(item.location.value)
-        });
-    };
-
-    const filterByType = arr => {
-        if(!selectedTypes.length) return arr;
-        return arr.filter(item => {
-            return selectedTypes.includes(item.type)
-        });
-    };
-
-    const filterByRating = arr => {
-        if(!selectedRating.length) return arr;
-        return arr.filter(item => {
-            return selectedRating.includes(item.rating)
-        });
-    };
-
-    const filterByReviews = arr => {
-        if(!reviewsCount) return arr;
-        return arr.filter(item => {
-            return item.reviews >= reviewsCount
-        });
-    };
-
-    const filterByPrice = arr => {
-        return arr.filter(item => {
-            return (item.price >= priceRange[0] && item.price <= priceRange[1])
-        });
-    };
 
     const handleBook = (title, status) => {
         status === 2
@@ -123,59 +61,9 @@ function App({
     const handleResetFilter = e => {
         e.preventDefault();
         resetFilters()
-        // setSelectedCountries(getAvailableProps('location').map(item => item.value));
-        // setSelectedTypes(getAvailableProps('type'));
-        // setSelectedRating(getAvailableProps('rating'));
-        // setReviewsCount([]);
-        // setPriceRange(INIT_RANGE);
-        // setFilteredCard(cardsData);
-    };
-
-    const handleChangeType = val => {
-        const index = selectedTypes.indexOf(val);
-        if(index !== -1){
-            setSelectedTypes(state => {
-                return state.filter(item => {
-                    return item !== val
-                })
-            })
-        }else{
-            setSelectedTypes(state => {
-                return [...state, val]
-            })
-        }
-    };
-
-    const handleChangeRating = val => {
-        const index = selectedRating.indexOf(val);
-        if(index !== -1){
-            setSelectedRating(state => {
-                return state.filter(item => {
-                    return item !== val
-                })
-            })
-        }else{
-            setSelectedRating(state => {
-                return [...state, val]
-            })
-        }
     };
 
 
-
-    const getAvailableProps = (field) => {
-        const res = cardsData.map(item => {
-            return item[field]
-        });
-        if(field === 'location'){
-            return getUniqueListBy(res, 'value')
-        };
-        return res
-    };
-
-    const handlePageChange = ({selected}) => {
-        setCurrentPage(selected + 1)
-    };
 
 
     return (
@@ -195,10 +83,7 @@ function App({
                         <ReviewsWidget/>
                     </div>
                     <div className="App__Widget">
-                        <PriceWidget
-                            priceRange={priceRange}
-                            handleSetRangePart={handleSetRangePart}
-                        />
+                        <PriceWidget/>
                     </div>
                     <div className="App__Actions">
                         <a
@@ -220,8 +105,8 @@ function App({
                 </div>
                 <div className="App__Content">
                     {
-                        filteredCard && filteredCard.length ?
-                            filteredCard.slice((currentPage - 1) * PAGE_COUNT , currentPage * PAGE_COUNT).map((card, index) => {
+                        filteredCards &&  filteredCards.length ?
+                            filteredCards.slice((currentPage - 1) * PAGE_COUNT , currentPage * PAGE_COUNT).map((card, index) => {
                                 return (
                                     <div className="App__Card" key={index.toString()}>
                                         <Card
@@ -235,8 +120,8 @@ function App({
                     }
                     <div className="App__Pagination">
                         <Pagination
-                            pageCount={filteredCard.length / PAGE_COUNT}
-                            onPageChange={handlePageChange}
+                            pageCount={filteredCards.length / PAGE_COUNT}
+                            onPageChange={setCurrentPage}
                         />
                     </div>
                 </div>

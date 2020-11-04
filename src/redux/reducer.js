@@ -10,12 +10,28 @@ import {
     CHECK_RATING,
     SET_REVIEWS,
     RESET_FILTER,
+    SET_PRICE_RANGE,
+    SET_FILTERED_CARDS,
+    SET_CURRENT_PAGE,
 
 } from './tasks'
+import { filterByCountry,
+    filterByType,
+    filterByRating,
+    filterByReviews,
+    filterByPrice,
+    filterCountries,
+    checkCountry,
+    checkOther,
+    getAvailableProps,
+    handleSetRangePart
+} from '../utils';
 
+const INIT_RANGE = [0, 100500];
 
 const initialState = {
     cards: cardsData,
+    filteredCards: cardsData,
     countries: {
         availableCountries: [],
         selectedCountries: [],
@@ -24,7 +40,9 @@ const initialState = {
     },
     selectedTypes: [],
     selectedRating: [],
-    reviews: 0
+    reviews: 0,
+    priceRange: INIT_RANGE,
+    currentPage: 1
 
 };
 
@@ -55,7 +73,7 @@ const reducer = (state = initialState, {type, payload}) => {
                 countries: {
                     ...state.countries,
                     searchBy: payload,
-                    filteredCountries: filteCountries(state.countries.availableCountries, payload)
+                    filteredCountries: filterCountries(state.countries.availableCountries, payload)
                 }
             };
         case RESET_SEARCH_COUNTRY:
@@ -103,6 +121,31 @@ const reducer = (state = initialState, {type, payload}) => {
 
             };
 
+        case SET_PRICE_RANGE:
+            return {
+                ...state,
+                priceRange: handleSetRangePart(payload, state.priceRange)
+            };
+
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: payload.selected + 1
+            };
+
+        case SET_FILTERED_CARDS:
+            return {
+                ...state,
+                filteredCards: filterByPrice(filterByReviews(
+                    filterByRating(filterByType(filterByCountry(state.cards, state.countries.selectedCountries),
+                        state.selectedTypes),
+                        state.selectedRating),
+                    state.reviews),
+                    state.priceRange
+                )
+
+            };
+
         case RESET_FILTER:
             return {
                 ...initialState,
@@ -115,52 +158,9 @@ const reducer = (state = initialState, {type, payload}) => {
 
 export default reducer;
 
-const filteCountries = (country, filterBy) => {
-    if(!filterBy || !filterBy.length) return country;
-    return country.filter(item => {
-        return item.title.toLowerCase().includes(filterBy.toLowerCase())
-    })
-};
 
 
-const checkCountry = (val, selectedCountries) => {
-    const index = selectedCountries.indexOf(val);
-    if(index !== -1){
-        return selectedCountries.filter(item => {
-            return item !== val
-        })
-    }else{
-        return [...selectedCountries, val]
-    }
-};
-
-const checkOther = (val, selectedCountries) => {
-    const index = selectedCountries.findIndex(item => {
-        return item === val.value
-    });
-    if(index !== -1){
-        return selectedCountries.filter(item => {
-            return item !== val.value
-        })
-    }else{
-        return [...selectedCountries, val.value]
-    }
-};
 
 
-const getAvailableProps = (field) => {
-    const res = cardsData.map(item => {
-        return item[field]
-    });
-    if(field === 'location'){
-        return getUniqueListBy(res, 'value')
-    }else if(field === 'type' || field === 'rating'){
-        return [...new Set(res)]
-    }
 
-    return res
-};
 
-function getUniqueListBy(arr, key) {
-    return [...new Map(arr.map(item => [item[key], item])).values()]
-};
