@@ -1,12 +1,10 @@
 import {cardsData} from '../data/mock';
 import {
-    SET_COUNTRIES,
+    SET_STATE,
     CHECK_COUNTRY,
     SET_SEARCH_COUNTRY,
     RESET_SEARCH_COUNTRY,
-    SET_TYPES,
     CHECK_TYPE,
-    SET_RATING,
     CHECK_RATING,
     SET_REVIEWS,
     RESET_FILTER,
@@ -48,16 +46,23 @@ const initialState = {
 
 const reducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case SET_COUNTRIES:
+        case SET_STATE:
+        case RESET_FILTER:
             return {
                 ...state,
+                cards: cardsData,
+                filteredCards: cardsData,
                 countries: {
                     ...state.countries,
                     availableCountries: getAvailableProps('location'),
                     selectedCountries: getAvailableProps('location'),
                     filteredCountries: getAvailableProps('location'),
-                }
-
+                },
+                selectedTypes: getAvailableProps('type'),
+                selectedRating: getAvailableProps('rating'),
+                reviews: 0,
+                priceRange: INIT_RANGE,
+                currentPage: 1
             };
         case CHECK_COUNTRY:
             return {
@@ -85,26 +90,10 @@ const reducer = (state = initialState, {type, payload}) => {
                     filteredCountries: getAvailableProps('location'),
                 }
             };
-
-
-        case SET_TYPES:
-            return {
-                ...state,
-                selectedTypes: getAvailableProps('type')
-
-            };
         case CHECK_TYPE:
             return {
                 ...state,
                 selectedTypes: checkOther(payload, state.selectedTypes)
-
-            };
-
-
-        case SET_RATING:
-            return {
-                ...state,
-                selectedRating: getAvailableProps('rating')
 
             };
         case CHECK_RATING:
@@ -113,26 +102,22 @@ const reducer = (state = initialState, {type, payload}) => {
                 selectedRating: checkOther(payload, state.selectedRating)
 
             };
-
         case SET_REVIEWS:
             return {
                 ...state,
                 reviews: payload
 
             };
-
         case SET_PRICE_RANGE:
             return {
                 ...state,
                 priceRange: handleSetRangePart(payload, state.priceRange)
             };
-
         case SET_CURRENT_PAGE:
             return {
                 ...state,
                 currentPage: payload.selected + 1
             };
-
         case SET_FILTERED_CARDS:
             return {
                 ...state,
@@ -143,12 +128,6 @@ const reducer = (state = initialState, {type, payload}) => {
                     state.reviews),
                     state.priceRange
                 )
-
-            };
-
-        case RESET_FILTER:
-            return {
-                ...initialState,
             };
 
         default:

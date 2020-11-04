@@ -11,13 +11,13 @@ import ClearIcon from './icons/clear.icon.svg';
 import Pagination from "../components/Pagination";
 import { connect } from "react-redux";
 
-import {resetFilters, setFilteredCards, setCurrentPage} from '../redux/actions'
-
+import {resetFilters, setFilteredCards, setCurrentPage, setState} from '../redux/actions'
 
 const mapDispatchToProps = {
     resetFilters,
     setFilteredCards,
     setCurrentPage,
+    setState
 };
 
 const mapStateToProps = ({cards, filteredCards, currentPage}) => ({
@@ -28,20 +28,17 @@ const mapStateToProps = ({cards, filteredCards, currentPage}) => ({
 
 const PAGE_COUNT = 10;
 
-
 function App({
      resetFilters,
      setFilteredCards,
      filteredCards,
      setCurrentPage,
-     currentPage
+     currentPage,
+     setState
     }) {
 
-
-
-
     useEffect(() => {
-
+        setState()
     }, []);
 
 
@@ -50,8 +47,7 @@ function App({
         setFilteredCards()
     };
 
-
-
+    //mock method
     const handleBook = (title, status) => {
         status === 2
             ? alert(`Если бы был бэк, вы могли бы забронировать ${title}`)
@@ -62,8 +58,6 @@ function App({
         e.preventDefault();
         resetFilters()
     };
-
-
 
 
     return (
@@ -116,13 +110,20 @@ function App({
                                     </div>
                                 )
                             }) :
-                            <Empty handleResetFilter={handleResetFilter}/>
+                            <Empty
+                                handleResetFilter={resetFilters}
+                            />
                     }
                     <div className="App__Pagination">
-                        <Pagination
-                            pageCount={filteredCards.length / PAGE_COUNT}
-                            onPageChange={setCurrentPage}
-                        />
+                        {
+                            filteredCards && filteredCards.length
+                                ? <Pagination
+                                    pageCount={filteredCards.length / PAGE_COUNT}
+                                    onPageChange={setCurrentPage}
+                                />
+                                : null
+                        }
+
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ import CheckBox from "../Checkbox";
 import {connect} from 'react-redux';
 import {
     checkCountry,
-    setAvaliableCountries,
     setSearchCountry,
     resetSearchCountry
 } from '../../redux/actions';
@@ -21,31 +20,18 @@ const mapStateToProps = ({countries}) => ({
 
 const mapDispatchToProps = {
     checkCountry,
-    setAvaliableCountries,
     setSearchCountry,
     resetSearchCountry
 };
 
 const CountryWidget = ({
-                           selectedCountries,
-                           setAvaliableCountries,
-                           checkCountry,
-                           setSearchCountry,
-                           searchBy,
-                           filteredCountries,
-                           resetSearchCountry
-                       }) => {
-
-
-
-    useEffect(() => {
-        setAvaliableCountries();
-    },[]);
-
-    useEffect(() => {
-        console.log('searchBy');
-    },[searchBy]);
-
+       selectedCountries,
+       checkCountry,
+       setSearchCountry,
+       searchBy,
+       filteredCountries,
+       resetSearchCountry
+   }) => {
 
 
     const handleResetFilter = (e) => {

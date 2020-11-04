@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './index.sass';
 import CheckBox from "../Checkbox";
 import {isChecked} from '../../utils';
 import { connect } from 'react-redux';
 import {
-    setTypes,
     checkType,
 } from '../../redux/actions'
 
@@ -13,7 +12,6 @@ const mapStateToProps = ({selectedTypes}) => ({
 });
 
 const mapDispatchToProps = {
-    setTypes,
     checkType
 };
 
@@ -28,11 +26,8 @@ const avaliableTypes = [
     },
 ]
 
-const TypeWidget = ({selectedTypes, checkType, setTypes}) => {
+const TypeWidget = ({selectedTypes, checkType}) => {
 
-    useEffect(() => {
-        setTypes();
-    }, []);
 
     return (
         <div className="TypeWidget">

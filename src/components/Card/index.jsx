@@ -1,7 +1,7 @@
 import React from 'react';
 import LocationIcon from './icons/location.icon.svg';
 import './index.sass';
-import Button from "../Button";
+import CardBtn from "../Button";
 import Rating from "../Rating";
 
 const Card = ({
@@ -63,7 +63,7 @@ const Card = ({
                     </div>
                 </div>
                 <div className="Card__Button">
-                    <Button
+                    <CardBtn
                         type={status}
                         handleBook={handleBook}
                         cardId={title}

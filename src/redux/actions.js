@@ -1,11 +1,9 @@
 import {
-    SET_COUNTRIES,
+    SET_STATE,
     CHECK_COUNTRY,
     SET_SEARCH_COUNTRY,
     RESET_SEARCH_COUNTRY,
-    SET_TYPES,
     CHECK_TYPE,
-    SET_RATING,
     CHECK_RATING,
     SET_REVIEWS,
     RESET_FILTER,
@@ -16,9 +14,9 @@ import {
 
 
 // --- COUNTRIES ---
-const setAvaliableCountries = () => {
+const setState = () => {
     return {
-        type: SET_COUNTRIES
+        type: SET_STATE
     }
 };
 
@@ -37,20 +35,12 @@ const resetSearchCountry = () => ({
 });
 
 // --- TYPES ---
-const setTypes = () => ({
-    type: SET_TYPES,
-});
-
 const checkType = (value) => ({
     type: CHECK_TYPE,
     payload: value
 });
 
 // --- RATING ---
-const setRating = () => ({
-    type: SET_RATING,
-});
-
 const checkRating = (value) => ({
     type: CHECK_RATING,
     payload: value
@@ -86,13 +76,11 @@ const setCurrentPage = (value) => ({
 
 
 export {
-    setAvaliableCountries,
+    setState,
     checkCountry,
     setSearchCountry,
     resetSearchCountry,
-    setTypes,
     checkType,
-    setRating,
     checkRating,
     setReviews,
     resetFilters,

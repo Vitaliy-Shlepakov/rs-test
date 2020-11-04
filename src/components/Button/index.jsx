@@ -17,7 +17,7 @@ const Button = ({
             handleBook(cardId, type)
         },
         [cardId, type]
-    )
+    );
 
     return (
         <a className={classNames({
